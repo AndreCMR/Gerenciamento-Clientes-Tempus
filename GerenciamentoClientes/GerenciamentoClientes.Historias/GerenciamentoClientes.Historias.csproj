@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\src\GerenciamentoClientes.Dominio\GerenciamentoClientes.Dominio.csproj" />
     <ProjectReference Include="..\src\GerenciamentoClientes.Infra\GerenciamentoClientes.Infra.csproj" />
   </ItemGroup>
