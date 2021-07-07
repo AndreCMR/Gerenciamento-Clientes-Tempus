@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoClientes.Domin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoClientes.Infra", "src\GerenciamentoClientes.Infra\GerenciamentoClientes.Infra.csproj", "{19210D2C-5C9D-4A76-9C56-7A762A70D1E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoClientes.Web", "src\GerenciamentoClientes.Web\GerenciamentoClientes.Web.csproj", "{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{19210D2C-5C9D-4A76-9C56-7A762A70D1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19210D2C-5C9D-4A76-9C56-7A762A70D1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19210D2C-5C9D-4A76-9C56-7A762A70D1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
