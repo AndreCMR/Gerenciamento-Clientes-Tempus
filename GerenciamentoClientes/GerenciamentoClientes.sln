@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoClientes.Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoClientes.Web", "src\GerenciamentoClientes.Web\GerenciamentoClientes.Web.csproj", "{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoClientes.Historias", "GerenciamentoClientes.Historias\GerenciamentoClientes.Historias.csproj", "{A8E6E356-557B-4C21-A52C-38DE615CA7E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C5AD8CF-0F58-4BCA-A9E1-83D00FA03F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E6E356-557B-4C21-A52C-38DE615CA7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E6E356-557B-4C21-A52C-38DE615CA7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E6E356-557B-4C21-A52C-38DE615CA7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E6E356-557B-4C21-A52C-38DE615CA7E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

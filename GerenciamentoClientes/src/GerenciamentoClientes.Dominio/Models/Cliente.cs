@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerenciamentoClientes.Dominio.Models
 {
@@ -13,11 +9,11 @@ namespace GerenciamentoClientes.Dominio.Models
              //
         }
 
-        public Cliente(Guid id, string nome, string cPF, DateTime dataNascimento, DateTime dataCadastro, decimal rendaFamiliar)
+        public Cliente(Guid id, string nome, string cpf, DateTime dataNascimento, DateTime dataCadastro, decimal rendaFamiliar)
         {
             Id = id;
             Nome = nome;
-            CPF = cPF;
+            CPF = cpf;
             DataNascimento = dataNascimento;
             DataCadastro = dataCadastro;
             RendaFamiliar = rendaFamiliar;
