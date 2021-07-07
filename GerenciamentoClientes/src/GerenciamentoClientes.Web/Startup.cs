@@ -1,3 +1,4 @@
+using GerenciamentoClientes.Historias;
 using GerenciamentoClientes.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,7 @@ namespace GerenciamentoClientes.Web
         {
             services.AddControllersWithViews();
             services.AdicionarContexto(configuration: Configuration);
+            services.AdicionarHistoria();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +59,7 @@ namespace GerenciamentoClientes.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
