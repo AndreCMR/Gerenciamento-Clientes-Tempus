@@ -1,11 +1,12 @@
 ﻿using GerenciamentoClientes.Dominio.Models;
 using GerenciamentoClientes.Historias.ClienteHistoria.ViewModels;
 using GerenciamentoClientes.Infra.Contexto;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GerenciamentoClientes.Historias.ClienteHistoria
 {
-   public class CadastrarCliente
+    public class CadastrarCliente
     {
         private readonly GerenciamentoClienteContexto _contexto;
 
@@ -22,5 +23,8 @@ namespace GerenciamentoClientes.Historias.ClienteHistoria
 
             await _contexto.SaveChangesAsync();
         }
+
+       
+
     }
 }

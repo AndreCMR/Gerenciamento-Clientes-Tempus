@@ -26,8 +26,6 @@ namespace GerenciamentoClientes.Historias.ClienteHistoria.ViewModels
         [DisplayName("Data de cadastro")]
         public DateTime DataCadastro { get; set; } = DateTime.Now;
 
-
-        [Required(ErrorMessage = "O {0} é obrigatório.")]
         [DisplayName("Renda Familiar")]
         public decimal RendaFamiliar { get; set; }
 
@@ -53,6 +51,7 @@ namespace GerenciamentoClientes.Historias.ClienteHistoria.ViewModels
                 RendaFamiliar = cliente.RendaFamiliar
             };
         }
+       
     }
 }
 

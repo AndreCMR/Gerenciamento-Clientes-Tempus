@@ -1,5 +1,4 @@
-﻿using GerenciamentoClientes.Historias.ClienteHistoria;
-using GerenciamentoClientes.Historias.ClienteHistoria.ViewModels;
+﻿using GerenciamentoClientes.Historias.RelatorioHistoria;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -7,8 +6,10 @@ namespace GerenciamentoClientes.Web.Controllers
 {
     public class HomeController : Controller
     {    
-        public IActionResult Index()
+        public async Task<IActionResult> Index([FromServices] GerarRelatorioPorIdadeCliente gerarRelatorioPorIdadeCliente)
         {
+          ViewData["TotalPorIdade"] =  await gerarRelatorioPorIdadeCliente.Executar();
+
             return View();
         }
       

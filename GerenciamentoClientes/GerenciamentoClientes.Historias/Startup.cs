@@ -1,4 +1,5 @@
 ﻿using GerenciamentoClientes.Historias.ClienteHistoria;
+using GerenciamentoClientes.Historias.RelatorioHistoria;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace GerenciamentoClientes.Historias
             services.AddScoped<CadastrarCliente>();
             services.AddScoped<ListarClientes>();
             services.AddScoped<VerificarCpfCliente>();
+            services.AddScoped<GerarRelatorioPorIdadeCliente>();
         }
     }
 }
