@@ -21,7 +21,7 @@ namespace GerenciamentoClientes.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Cadastrar([FromServices] CadastrarCliente cadastrarCliente, ClienteViewModel clienteViewModel)
+        public async Task<IActionResult> Cadastrar([FromServices] CadastrarCliente cadastrarCliente, [FromServices] VerificarCpfCliente verificarCpfCliente, ClienteViewModel clienteViewModel)
         {
             if (!clienteViewModel.CPF.ValidaCPF())
             {
@@ -31,7 +31,14 @@ namespace GerenciamentoClientes.Web.Controllers
             }
 
             if (ModelState.IsValid)
-            {             
+            {
+
+                if (verificarCpfCliente.Executar(clienteViewModel.CPF))
+                {
+                    ModelState.AddModelError("CPF", "CPF já cadastrado");
+
+                    return View(clienteViewModel);
+                }
 
                 await cadastrarCliente.Executar(clienteViewModel);
 
@@ -40,5 +47,7 @@ namespace GerenciamentoClientes.Web.Controllers
 
             return View(clienteViewModel);
         }
+
+
     }
 }

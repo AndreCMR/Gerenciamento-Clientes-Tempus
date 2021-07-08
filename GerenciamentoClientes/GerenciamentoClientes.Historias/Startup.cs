@@ -15,6 +15,7 @@ namespace GerenciamentoClientes.Historias
             //Injeção
             services.AddScoped<CadastrarCliente>();
             services.AddScoped<ListarClientes>();
+            services.AddScoped<VerificarCpfCliente>();
         }
     }
 }
