@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Clientes";
 }
+<link href="~/css/badge.css" rel="stylesheet" />
+
 <div class="content">
     <div class="container-fluid">
 
@@ -61,7 +63,21 @@
                                                     @cliente.DataCadastro
                                                 </td>
                                                 <td class="text-primary">
-                                                    @cliente.RendaFamiliar.ToString("C")
+                                                    @if (@cliente.RendaFamiliar <= 980)
+                                                    {
+                                                        <span class="badge-red">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+
+                                                    @if (@cliente.RendaFamiliar > 980 && @cliente.RendaFamiliar <= 2500)
+                                                    {
+                                                        <span class="badge-yellow">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+
+                                                    @if (@cliente.RendaFamiliar > 2500)
+                                                    {
+                                                        <span class="badge-green">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+
                                                 </td>
                                             </tr>
                                         }
