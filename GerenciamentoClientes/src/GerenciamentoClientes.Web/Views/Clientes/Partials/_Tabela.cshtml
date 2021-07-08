@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GerenciamentoClientes.Historias.ClienteHistoria.ViewModels.ClienteViewModel>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+<link href="~/css/badge.css" rel="stylesheet" />
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Tabela de Clientes</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive-md">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr class="text-center">
+                                        <th>
+                                            Nome
+                                        </th>
+                                      
+                                        <th>
+                                            Renda Familiar
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        @foreach (var cliente in Model)
+                                        {
+                                            <tr class="text-center">
+                                                <td>
+                                                    @cliente.Nome
+                                                </td>
+                                             
+                                                <td class="text-primary">
+                                                    @if (@cliente.RendaFamiliar <= 980)
+                                                    {
+                                                        <span class="badge-red">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+
+                                                    @if (@cliente.RendaFamiliar > 980 && @cliente.RendaFamiliar <= 2500)
+                                                    {
+                                                        <span class="badge-yellow">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+
+                                                    @if (@cliente.RendaFamiliar > 2500)
+                                                    {
+                                                        <span class="badge-green">@cliente.RendaFamiliar.ToString("C")</span>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="5"> Não há nenhum registro de clientes</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

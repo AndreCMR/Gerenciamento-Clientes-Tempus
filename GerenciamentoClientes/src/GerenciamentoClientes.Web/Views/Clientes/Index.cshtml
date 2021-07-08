@@ -7,93 +7,21 @@
 
 <div class="content">
     <div class="container-fluid">
-
-        <div class="row">
             <div class="col-md-12">
                 <div class="card-top">
                     <a asp-action="Cadastrar" class="btn  btn-success float-right">
                         <i class="material-icons">person_add </i> Adicionar Cliente
                     </a>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Tabela de Clientes</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <tr>
-                                        <th>
-                                            Nome
-                                        </th>
-                                        <th>
-                                            CPF
-                                        </th>
-                                        <th>
-                                            Data De Nascimento
-                                        </th>
-                                        <th>
-                                            Data de Cadastro
-                                        </th>
-                                        <th>
-                                            Renda Familiar
-                                        </th>
-                                    </tr>
-                                </thead>
 
-                                <tbody>
-                                    @if (Model != null)
-                                    {
-                                        @foreach (var cliente in Model)
-                                        {
-                                            <tr>
-                                                <td>
-                                                    @cliente.Nome
-                                                </td>
-                                                <td>
-                                                    @cliente.CPF
-                                                </td>
-                                                <td>
-                                                    @cliente.DataNascimento.ToString("d")
-                                                </td>
-                                                <td>
-                                                    @cliente.DataCadastro
-                                                </td>
-                                                <td class="text-primary">
-                                                    @if (@cliente.RendaFamiliar <= 980)
-                                                    {
-                                                        <span class="badge-red">@cliente.RendaFamiliar.ToString("C")</span>
-                                                    }
-
-                                                    @if (@cliente.RendaFamiliar > 980 && @cliente.RendaFamiliar <= 2500)
-                                                    {
-                                                        <span class="badge-yellow">@cliente.RendaFamiliar.ToString("C")</span>
-                                                    }
-
-                                                    @if (@cliente.RendaFamiliar > 2500)
-                                                    {
-                                                        <span class="badge-green">@cliente.RendaFamiliar.ToString("C")</span>
-                                                    }
-
-                                                </td>
-                                            </tr>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <tr>
-                                            <td colspan="5"> Não há nenhum registro de clientes</td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="filtro">
+                    <partial name="Partials\_Filtro" model="null" />
                 </div>
-            </div>
+
+                <div class="filtro">
+                    <partial name="Partials\_Tabela" model="Model" />
+                </div>
+
+            </div>          
         </div>
     </div>
-</div>

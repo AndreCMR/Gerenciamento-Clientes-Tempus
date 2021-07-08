@@ -19,13 +19,15 @@ namespace GerenciamentoClientes.Historias.RelatorioHistoria
 
         public async Task<int> Executar()
         {
-            var clientes = await _contexto.Cliente.Where(cliente => cliente.RendaFamiliar > 0).ToListAsync();
+            var clientes = await _contexto.Cliente.Where(cliente => cliente.RendaFamiliar >= 0).ToListAsync();
 
             var classeA = clientes.Count(r => r.RendaFamiliar <= 980);
 
             var classeB = clientes.Count(r => r.RendaFamiliar > 980 && r.RendaFamiliar <= 2500);
 
             var classeC = clientes.Count(r => r.RendaFamiliar > 2500);
+
+            return classeA;
         }
 
 

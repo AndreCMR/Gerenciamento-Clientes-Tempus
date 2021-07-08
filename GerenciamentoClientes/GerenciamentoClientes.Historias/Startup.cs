@@ -18,6 +18,8 @@ namespace GerenciamentoClientes.Historias
             services.AddScoped<ListarClientes>();
             services.AddScoped<VerificarCpfCliente>();
             services.AddScoped<GerarRelatorioPorIdadeCliente>();
+            services.AddScoped<FiltrarCliente>();
+
         }
     }
 }

@@ -47,6 +47,12 @@ namespace GerenciamentoClientes.Web.Controllers
 
             return View(clienteViewModel);
         }
+        public async Task<IActionResult> Filtrar([FromServices] FiltrarCliente filtrarCliente, string nome)
+        {
+            var clientes = await filtrarCliente.Executar(nome);
+
+            return View(nameof(Index), clientes);
+        }
 
 
     }

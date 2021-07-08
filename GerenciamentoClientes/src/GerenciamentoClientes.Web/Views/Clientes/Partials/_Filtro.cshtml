@@ -1,0 +1,15 @@
+﻿@model GerenciamentoClientes.Historias.ClienteHistoria.ViewModels.ClienteViewModel
+
+<form asp-action="Filtrar" id="formFiltro" autocomplete="off">
+        <div class="col-md-12 form-group label-floating">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+
+        <div class="col-md-12 form-group">
+            <button type="submit" class="btn btn-filtro btn-block">
+                <i class="material-icons">search</i>
+                Filtrar
+            </button>
+        </div>
+</form>
