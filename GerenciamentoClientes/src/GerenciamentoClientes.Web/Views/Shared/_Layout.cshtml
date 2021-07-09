@@ -1,8 +1,7 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <title>Hello, world!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -12,12 +11,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="~/assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="~/assets/demo/demo.css" rel="stylesheet" />
+    <link href="~/assets/css/material-dashboard-rtl.css" rel="stylesheet" />
+    <!--Meus Css Personalizado-->
+    <link href="~/css/StylePersonalizado.css" rel="stylesheet" />
+
+    <title>
+        Gerencimento de clientes
+    </title>
+
 </head>
 
-<body>
+<body class="">
     <div class="wrapper ">
         <div class="sidebar" data-color="purple" data-background-color="white">
-          
             <div class="logo">
                 <a href="/" class="simple-text logo-normal">
                     Gerenciamento De
@@ -28,17 +35,24 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link"  asp-controller="Home" asp-action="Index">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
 
-                    <li class="nav-item ">
+                    <li class="nav-item active">
                         <a class="nav-link" asp-controller="Clientes" asp-action="Index">
                             <i class="material-icons">person</i>
                             <p>Clientes</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Clientes" asp-action="Cadastrar">
+                            <i class="material-icons">person_add</i>
+                            <p>Adicionar Cliente</p>
                         </a>
                     </li>
                 </ul>
@@ -47,9 +61,6 @@
         <div class="main-panel">
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
-                    <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:;">@ViewData["Title"]</a>
-                    </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon icon-bar"></span>
@@ -69,7 +80,7 @@
                         <ul>
                             <li>
                                 <a href="/">
-                                   Gerenciamento de Clientes
+                                    Gerenciamento de Clientes
                                 </a>
                             </li>
                         </ul>
@@ -78,6 +89,14 @@
             </footer>
         </div>
     </div>
+    <!--   Core JS Files   -->
+    <script src="~/assets/js/core/jquery.min.js"></script>
+    <script src="~/assets/js/core/popper.min.js"></script>
+    <script src="~/assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/assets/js/material-dashboard.js"></script>
+
+    @RenderSection("Scripts", false)
 </body>
 
 </html>

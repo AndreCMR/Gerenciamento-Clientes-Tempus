@@ -1,0 +1,93 @@
+﻿@using GerenciamentoClientes.Dominio.Models
+
+@{
+    Layout = null;
+
+    var classesRendimentos = (List<RendimentoFamiliar>)ViewBag.ClassesRendimento;
+
+    var classeA = classesRendimentos.FirstOrDefault(x => x.Classe == "Classe A")?.Quantidade ?? 0;
+
+    var classeB = classesRendimentos.FirstOrDefault(x => x.Classe == "Classe B")?.Quantidade ?? 0;
+
+    var classeC = classesRendimentos.FirstOrDefault(x => x.Classe == "Classe C")?.Quantidade ?? 0;
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">person</i>
+                </div>
+                <p class="card-category">Renda acima da média</p>
+                <h3 class="card-title">
+                    @ViewBag.TotalPorIdade
+                    <small>Cliente(s)</small>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">A</i>
+                </div>
+                <p class="card-category">Classe A</p>
+                <h3 class="card-title">
+                    <small> Total: @classeA</small>
+                </h3>
+            </div>
+
+            <div class="card-footer">
+                <div class="stats">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">B</i>
+                </div>
+                <p class="card-category">Classe B</p>
+                <h3 class="card-title">
+                    <small> Total: @classeB</small>
+                </h3>
+            </div>
+
+            <div class="card-footer">
+                <div class="stats">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">C</i>
+                </div>
+                <p class="card-category">Classe C</p>
+                <h3 class="card-title">
+                    <small> Total: @classeC</small>
+                </h3>
+            </div>
+
+            <div class="card-footer">
+                <div class="stats">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

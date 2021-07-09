@@ -3,25 +3,19 @@
 @{
     ViewData["Title"] = "Clientes";
 }
-<link href="~/css/badge.css" rel="stylesheet" />
 
-<div class="content">
-    <div class="container-fluid">
-            <div class="col-md-12">
-                <div class="card-top">
-                    <a asp-action="Cadastrar" class="btn  btn-success float-right">
-                        <i class="material-icons">person_add </i> Adicionar Cliente
-                    </a>
-                </div>
+<div class="content">    
+    <div class="container-fluid">      
 
-                <div class="filtro">
-                    <partial name="Partials\_Filtro" model="null" />
-                </div>
+        <div class="col-md-12">
+            <div class="filtro">
+                <partial name="Partials\_Filtro" model="null" />
+            </div>
 
-                <div class="filtro">
-                    <partial name="Partials\_Tabela" model="Model" />
-                </div>
+            <div class="filtro">
+                <partial name="Partials\_Tabela" model="Model" />
+            </div>
 
-            </div>          
         </div>
     </div>
+</div>
