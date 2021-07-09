@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Remove="RelatorioHistoria\GerarRelatorioPorIdadeCliente.cs~RF13566b9.TMP" />
+    <None Remove="RelatorioHistoria\GerarRelatorioPorRendimentoFamiliaCliente.cs~RF51c7833.TMP" />
   </ItemGroup>
 
   <ItemGroup>
