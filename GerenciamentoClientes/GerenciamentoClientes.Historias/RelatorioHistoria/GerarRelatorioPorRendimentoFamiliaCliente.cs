@@ -1,4 +1,5 @@
-﻿using GerenciamentoClientes.Infra.Contexto;
+﻿using GerenciamentoClientes.Dominio.Models;
+using GerenciamentoClientes.Infra.Contexto;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,19 +18,32 @@ namespace GerenciamentoClientes.Historias.RelatorioHistoria
             _contexto = contexto;
         }
 
-        public async Task<int> Executar()
+        public List<RendimentoFamiliar> Executar(DateTime dataInicio, DateTime dataFinal)
         {
-            var clientes = await _contexto.Cliente.Where(cliente => cliente.RendaFamiliar >= 0).ToListAsync();
+            var classeRendimento = _contexto.Cliente
+                .Where(p => p.DataCadastro >= dataInicio && p.DataCadastro <= dataFinal)
+                .Select(d => d.RendaFamiliar)
+                .ToList().GroupBy(new ClassesRendimentoClienteUtils().ClassesRendimentoDescricao)
+                .ToDictionary(k => k.Key, v => v.Count());
 
-            var classeA = clientes.Count(r => r.RendaFamiliar <= 980);
 
-            var classeB = clientes.Count(r => r.RendaFamiliar > 980 && r.RendaFamiliar <= 2500);
+            var resultado = classeRendimento.Select(f => new RendimentoFamiliar
+            {
+                Classe = f.Key,
+                Quantidade = f.Value
+            })
+              .OrderBy(x => x.Classe == "Classe C")
+              .ThenBy(x => x.Classe == "Classe B")
+              .ThenBy(x => x.Classe == "Classe A").ToList();
 
-            var classeC = clientes.Count(r => r.RendaFamiliar > 2500);
 
-            return classeA;
+            return resultado;
         }
 
 
+
+
     }
+
+    
 }
