@@ -18,16 +18,19 @@ namespace GerenciamentoClientes.Historias.RelatorioHistoria
             _contexto = contexto;
         }
 
-        public async Task<int> Executar()
-        {
+        public async Task<int> Executar(DateTime dataInicio, DateTime dataFinal)
+        {           
+
             var mediaRendaFamiliar = await _contexto.Cliente.AverageAsync(p => p.RendaFamiliar);
 
-            var clientes = await _contexto.Cliente.Where(cliente => cliente.RendaFamiliar > mediaRendaFamiliar).ToListAsync();
+            var clientes = await _contexto.Cliente
+                .Where(p => p.DataCadastro >= dataInicio && p.DataCadastro <= dataFinal)
+                .Where(cliente => cliente.RendaFamiliar > mediaRendaFamiliar)
+                .ToListAsync();
 
             var total = clientes.Count(cliente => CalculaIdade(cliente.DataNascimento) >= 18);
 
             return total;
-
         }
 
         private int CalculaIdade(DateTime dataNascimento)
