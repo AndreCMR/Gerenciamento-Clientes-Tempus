@@ -11,6 +11,9 @@
 
 ### Web:
 - GerenciamentoClientes.Web: A interface do projeto
+-  GerenciamentoClientes.Historias: Camada por processar os dados do negócio.
+-  GerenciamentoClientes.Dominio: Camada responsável por gerenciar os modelos do projeto.
+-  GerenciamentoClientes.Infra: Camada responsável por ligar a base de dados com a nossa aplicação
 
 ### Instalação:
 - Com a IDE Visual Studio ou Visual Studio Code: File > Open project. E execute o projeto com IIS express.
