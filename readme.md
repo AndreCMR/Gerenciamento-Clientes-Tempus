@@ -16,10 +16,10 @@
 - Com a IDE Visual Studio ou Visual Studio Code: File > Open project. E execute o projeto com IIS express.
 
 ### Imagens Web:
-<img src="https://imgur.com/a/7WIdV1Z" alt="Dashboard"> 
+<img src="https://i.imgur.com/jNaAXh7.png" alt="Dashboard"> 
 
-<img src="https://imgur.com/a/J94inJB" alt="Cadastro de Clientes"> 
+<img src="https://i.imgur.com/Z6oy2yy.png" alt="Cadastro de Clientes"> 
 
-<img src="https://imgur.com/a/J94inJB" alt="Tabela de Clientes"> 
+<img src="https://i.imgur.com/cvYC0ye.png" alt="Tabela de Clientes"> 
 
 
